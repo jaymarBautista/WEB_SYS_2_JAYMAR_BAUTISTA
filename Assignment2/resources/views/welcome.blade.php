@@ -23,7 +23,9 @@
         @php
              $fullname = "Jaymar Valdez Bautista";
         @endphp 
+         
 
+         
         <p style="color:white " >Fullname: {{ $fullname }}</p>
 
 
@@ -280,5 +282,10 @@
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
         @endif
+        @php
+        $age = 17;
+        @endphp
+        <p>User: {{ $status }}</p>
+        
     </body>
 </html>
