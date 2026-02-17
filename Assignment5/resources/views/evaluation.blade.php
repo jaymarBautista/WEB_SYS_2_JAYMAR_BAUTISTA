@@ -12,10 +12,6 @@
 <body>
 
     <h2>Student Evaluation</h2>
-
-    {{-- Only display results if the name and grades are provided --}}
-    @if($name && isset($prelim, $midterm, $final))
-        
         @php
             $average = ($prelim + $midterm + $final) / 3;
         @endphp
@@ -24,7 +20,6 @@
             <p><strong>Name:</strong> {{ $name }}</p>
             <p><strong>Average:</strong> {{ number_format($average, 2) }}</p>
 
-            {{-- Letter Grade Logic --}}
             <p><strong>Letter Grade:</strong> 
                 @if($average >= 90) A
                 @elseif($average >= 80) B
@@ -34,7 +29,6 @@
                 @endif
             </p>
 
-            {{-- Remarks Logic --}}
             <p><strong>Remarks:</strong> 
                 @if($average >= 75)
                     <span class="passed">Passed</span>
@@ -43,7 +37,6 @@
                 @endif
             </p>
 
-            {{-- Award Logic --}}
             <p><strong>Award:</strong> 
                 @if($average >= 98 && $average <= 100)
                     With Highest Honors
@@ -57,10 +50,8 @@
             </p>
         </div>
 
-    @else
-        <p>Please provide student data via URL parameters.<br>
-        Example: <code>/evaluation?name=Maria Lopez&prelim=92&midterm=88&final=94</code></p>
-    @endif
+ 
+    
 
 </body>
 </html>
