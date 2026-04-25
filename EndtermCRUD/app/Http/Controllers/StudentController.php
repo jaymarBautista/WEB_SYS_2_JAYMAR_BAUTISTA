@@ -29,6 +29,7 @@ class StudentController extends Controller
             'year_level' => 'required',
             'student_id' => 'required',
         ]);
+        
         DB::table('user')->insert([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
